@@ -1,6 +1,6 @@
 # Historical Weather
 
-The website, hosted at https://historicalweather.sn1316.com allows you to give a specific location and to find out the weather conditions on any given date, for the previous 20 years.
+The website, hosted at https://historicweather.sn1316.com allows you to give a specific location and to find out the weather conditions on any given date, for the previous 20 years.
 
 ## How it works
 
