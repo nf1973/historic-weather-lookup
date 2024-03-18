@@ -16,7 +16,7 @@ const Footer = () => {
             </a>
           </p>
           <p>
-            Historical weather data by{" "}
+            Historical weather data from{" "}
             <a href="https://open-meteo.com/" target="_blank">
               Open-Meteo.com
             </a>
