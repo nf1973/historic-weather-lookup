@@ -1,7 +1,9 @@
 "use server";
 
+import { assignDirection } from "@/app/utils/geo";
+
 const GEONAMES_SECRETKEY = process.env.GEONAMES_SECRETKEY;
-console.log("GEONAMES_SECRETKEY:", GEONAMES_SECRETKEY);
+
 const weatherCodeDescriptions = {
   0: "Clear",
   1: "Mostly Clear",
@@ -59,6 +61,14 @@ export const fetchWeatherData = async (locationData, date) => {
     const weatherCodeDescription =
       weatherCodeDescriptions[weatherCode] || "Unknown";
     weatherData.daily.weather_code_description = weatherCodeDescription;
+
+    const windDirectionDegrees = parseInt(
+      weatherData.daily.wind_direction_10m_dominant,
+      0
+    );
+
+    const windDirection = assignDirection(windDirectionDegrees);
+    weatherData.daily.wind_direction = windDirection;
 
     return weatherData;
   } catch (error) {

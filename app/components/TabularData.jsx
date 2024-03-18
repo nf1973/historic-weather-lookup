@@ -111,13 +111,13 @@ const TabularData = ({ foundLocation, weatherData }) => {
                 currentKey="temperature_2m_min"
               />
               <SortableHeader
-                label="Prevailing Wind Direction"
-                onClick={() => handleSort("wind_direction_10m_dominant")}
+                label="Dominant Wind Direction"
+                onClick={() => handleSort("wind_direction")}
                 sortConfig={sortConfig}
-                currentKey="wind_direction_10m_dominant"
+                currentKey="wind_direction"
               />
               <SortableHeader
-                label="Max Wind Speed"
+                label="Wind Speed"
                 onClick={() => handleSort("wind_speed_10m_max")}
                 sortConfig={sortConfig}
                 currentKey="wind_speed_10m_max"
@@ -145,22 +145,22 @@ const TabularData = ({ foundLocation, weatherData }) => {
                 <td className="px-6 py-3 whitespace-nowrap text-center">
                   {date.daily.time.toString().slice(0, 4)}
                 </td>
+                <td className="px-8 py-3 text-right whitespace-nowrap ">
+                  {Number(date.daily.temperature_2m_max).toFixed(1)}°C
+                </td>
+                <td className="px-8 py-3 text-right whitespace-nowrap">
+                  {Number(date.daily.temperature_2m_min).toFixed(1)}°C
+                </td>
+                <td className="px-6 py-3 text-center whitespace-nowrap hidden lg:table-cell">
+                  {date.daily.wind_direction}
+                </td>
+                <td className="px-6 py-3 text-right whitespace-nowrap hidden lg:table-cell">
+                  {Number(date.daily.wind_speed_10m_max).toFixed(1)} km/h
+                </td>
+                <td className="px-8 py-3 text-right whitespace-nowrap hidden lg:table-cell">
+                  {Number(date.daily.precipitation_sum).toFixed(1)} mm
+                </td>
                 <td className="px-6 py-3 text-right whitespace-nowrap">
-                  {date.daily.temperature_2m_max}°C
-                </td>
-                <td className="px-6 py-3 text-right whitespace-nowrap">
-                  {date.daily.temperature_2m_min}°C
-                </td>
-                <td className="px-6 py-3 text-right whitespace-nowrap hidden lg:table-cell">
-                  {date.daily.wind_direction_10m_dominant}°
-                </td>
-                <td className="px-6 py-3 text-right whitespace-nowrap hidden lg:table-cell">
-                  {date.daily.wind_speed_10m_max} km/h
-                </td>
-                <td className="px-6 py-3 text-right whitespace-nowrap hidden lg:table-cell">
-                  {date.daily.precipitation_sum} mm
-                </td>
-                <td className="px-6 py-3 text-center whitespace-nowrap">
                   {date.daily.weather_code_description}
                 </td>
               </tr>
@@ -174,12 +174,32 @@ const TabularData = ({ foundLocation, weatherData }) => {
 
 const SortableHeader = ({ label, onClick, sortConfig, currentKey }) => {
   const isSorted = sortConfig && sortConfig.key === currentKey;
+
+  const classNames = [
+    "cursor-pointer",
+    "px-6",
+    "py-3",
+    "text-right",
+    "text-xs",
+    "font-medium",
+    "uppercase",
+    "tracking-wider",
+  ];
+
+  // Conditional class names
+  if (currentKey === "time") classNames.push("rounded-tl-md");
+  if (currentKey === "weather_code_description")
+    classNames.push("rounded-tr-md");
+  if (
+    currentKey === "wind_direction" ||
+    currentKey === "wind_speed_10m_max" ||
+    currentKey === "precipitation_sum"
+  )
+    classNames.push("hidden", "lg:table-cell");
+
   return (
-    <th
-      className="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider"
-      onClick={onClick}
-    >
-      <span className="cursor-pointer">{label}</span>
+    <th className={classNames.join(" ")} onClick={onClick}>
+      {label}
       {isSorted && (
         <span>{sortConfig.direction === "ascending" ? " ▲" : " ▼"}</span>
       )}

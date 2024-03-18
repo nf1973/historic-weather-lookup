@@ -21,3 +21,43 @@ export const decimalToDegreesMinutesSeconds = (latitude, longitude) => {
 
   return [latResult, lonResult];
 };
+
+export const assignDirection = (degrees) => {
+  // Normalize degrees to be between 0 and 360
+  degrees = (degrees + 360) % 360;
+
+  let direction;
+
+  switch (true) {
+    case (degrees >= 337.5 && degrees < 360) ||
+      (degrees >= 0 && degrees < 22.5):
+      direction = "N";
+      break;
+    case degrees >= 22.5 && degrees < 67.5:
+      direction = "NE";
+      break;
+    case degrees >= 67.5 && degrees < 112.5:
+      direction = "E";
+      break;
+    case degrees >= 112.5 && degrees < 157.5:
+      direction = "SE";
+      break;
+    case degrees >= 157.5 && degrees < 202.5:
+      direction = "S";
+      break;
+    case degrees >= 202.5 && degrees < 247.5:
+      direction = "SW";
+      break;
+    case degrees >= 247.5 && degrees < 292.5:
+      direction = "W";
+      break;
+    case degrees >= 292.5 && degrees < 337.5:
+      direction = "NW";
+      break;
+    default:
+      direction = "Invalid input";
+      break;
+  }
+
+  return direction;
+};
