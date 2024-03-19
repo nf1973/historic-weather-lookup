@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { decimalToDegreesMinutesSeconds } from "@/app/utils/geo";
 
 const TabularData = ({ foundLocation, weatherData }) => {
