@@ -4,11 +4,14 @@ const Header = () => {
   return (
     <header className="bg-[#05213c] text-white py-4 px-4 w-full">
       <div className="container mx-auto flex justify-between items-center max-w-[1260px] py-4">
-        <div className="flex-shrink-0">
-          <h1 className="text-2xl font-semibold flex items-center">
-            <FaCloudSunRain className="mr-2" /> Historic Weather Lookup
-          </h1>
-        </div>
+        <a href="/">
+          {" "}
+          <div className="flex-shrink-0">
+            <h1 className="text-2xl font-semibold flex items-center">
+              <FaCloudSunRain className="mr-2" /> Historic Weather Lookup
+            </h1>
+          </div>
+        </a>
 
         <nav className="items-center space-x-6 hidden lg:flex ">
           <a
