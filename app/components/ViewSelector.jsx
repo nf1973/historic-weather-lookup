@@ -18,21 +18,21 @@ const ViewSelector = ({ selectedView, setSelectedView }) => {
         <div className="flex gap-4">
           <button
             ref={(el) => (buttonRefs.current["Statistics"] = el)}
-            className={`flex-1 bg-[#05213c] hover:bg-blue-700 focus:bg-blue-700 text-white py-2 px-4 rounded`}
+            className={`flex-1 bg-[#05213c] hover:bg-blue-700 focus:bg-blue-600 text-white py-2 px-4 rounded`}
             onClick={() => handleButtonClick("Statistics")}
           >
             Statistics
           </button>
           <button
             ref={(el) => (buttonRefs.current["Charts"] = el)}
-            className={`flex-1 bg-[#05213c] hover:bg-blue-700 focus:bg-blue-700 text-white py-2 px-4 rounded`}
+            className={`flex-1 bg-[#05213c] hover:bg-blue-700 focus:bg-blue-600 text-white py-2 px-4 rounded`}
             onClick={() => handleButtonClick("Charts")}
           >
             Charts
           </button>
           <button
             ref={(el) => (buttonRefs.current["Table"] = el)}
-            className={`flex-1 bg-[#05213c] hover:bg-blue-700 focus:bg-blue-700 text-white py-2 px-4 rounded`}
+            className={`flex-1 bg-[#05213c] hover:bg-blue-700 focus:bg-blue-600 text-white py-2 px-4 rounded`}
             onClick={() => handleButtonClick("Table")}
           >
             Table
