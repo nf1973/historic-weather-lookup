@@ -9,6 +9,7 @@ import Loading from "./components/Loading";
 import Footer from "./components/Footer";
 import CoverImage from "./components/CoverImage";
 import ViewSelector from "./components/ViewSelector";
+import LocationInfo from "./components/LocationInfo";
 import Charts from "./components/Charts";
 import Statistics from "./components/Statistics";
 
@@ -36,10 +37,16 @@ export default function Home() {
         {!loading && !weatherData && <CoverImage />}
 
         {!loading && weatherData && (
-          <ViewSelector
-            selectedView={selectedView}
-            setSelectedView={setSelectedView}
-          />
+          <>
+            <ViewSelector
+              selectedView={selectedView}
+              setSelectedView={setSelectedView}
+            />
+            <LocationInfo
+              foundLocation={foundLocation}
+              weatherData={weatherData}
+            />
+          </>
         )}
 
         {loading && <Loading />}
