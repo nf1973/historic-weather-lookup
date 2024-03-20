@@ -16,7 +16,7 @@ export default function Home() {
   const [foundLocation, setFoundLocation] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [selectedView, setSelectedView] = useState("Table");
+  const [selectedView, setSelectedView] = useState("Statistics");
 
   return (
     <main className="bg-white flex flex-col items-center justify-between w-full mx-auto min-h-screen">
