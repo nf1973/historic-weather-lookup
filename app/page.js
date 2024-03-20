@@ -14,6 +14,8 @@ import Charts from "./components/Charts";
 import Statistics from "./components/Statistics";
 
 export default function Home() {
+  const [month, setMonth] = useState("");
+  const [day, setDay] = useState("");
   const [foundLocation, setFoundLocation] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -26,6 +28,10 @@ export default function Home() {
       </div>
       <div className="flex-grow w-full">
         <InputForm
+          month={month}
+          setMonth={setMonth}
+          day={day}
+          setDay={setDay}
           weatherData={weatherData}
           setWeatherData={setWeatherData}
           foundLocation={foundLocation}
@@ -45,6 +51,8 @@ export default function Home() {
             <LocationInfo
               foundLocation={foundLocation}
               weatherData={weatherData}
+              month={month}
+              day={day}
             />
           </>
         )}

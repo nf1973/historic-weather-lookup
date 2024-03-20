@@ -13,10 +13,14 @@ const InputForm = ({
   foundLocation,
   loading,
   setLoading,
+  month,
+  setMonth,
+  day,
+  setDay,
 }) => {
   const [userEntry, setUserEntry] = useState(DEFAULTLOCATION);
-  const [month, setMonth] = useState("");
-  const [day, setDay] = useState("");
+  // const [month, setMonth] = useState("");
+  // const [day, setDay] = useState("");
   const [selectedDates, setSelectedDates] = useState([]);
 
   useEffect(() => {
