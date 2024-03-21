@@ -10,7 +10,7 @@ const Charts = ({ foundLocation, weatherData }) => {
         <div className="mb-6 text-xl font-bold w-full">
           <div>
             <div className=" text-gray-600 font-base text-xs">
-              <div className="grid grid-cols-12">
+              <div className="grid grid-cols-12 gap-4">
                 <div className="col-span-12">
                   <Card
                     cardHeightClassName="h-[500px]"
