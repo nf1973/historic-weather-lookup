@@ -30,7 +30,7 @@ const TemperatureChart = ({ weatherData }) => {
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
-        <YAxis />
+        <YAxis label={{ value: "°C", angle: -90, position: "insideLeft" }} />
         <Tooltip />
         <Legend align="center" verticalAlign="bottom" />
         <Line

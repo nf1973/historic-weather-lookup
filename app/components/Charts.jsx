@@ -1,13 +1,8 @@
-import { decimalToDegreesMinutesSeconds } from "../utils/geo";
-import TemperatureChart from "./charts/TemperatureChart";
 import Card from "./Card";
+import TemperatureChart from "./charts/TemperatureChart";
+import RainfallChart from "./charts/RainfallChart";
 
 const Charts = ({ foundLocation, weatherData }) => {
-  const [latitude, longitude] = decimalToDegreesMinutesSeconds(
-    foundLocation.lat,
-    foundLocation.lng
-  );
-
   return (
     <div className="bg-white text-[#05213c] py-4 px-4 w-full">
       <div className="container mx-auto flex flex-col justify-between items-center max-w-[1260px] py-3">
@@ -16,9 +11,15 @@ const Charts = ({ foundLocation, weatherData }) => {
             <p className="mt-8 text-gray-600 text-base font-base">
               <Card
                 cardHeightClassName="h-[500px]"
-                cardTitle={`Minimum & Maximum Temperatures`}
+                cardTitle={"Minimum & Maximum Temperatures in °C"}
               >
                 <TemperatureChart weatherData={weatherData} />
+              </Card>
+              <Card
+                cardHeightClassName="h-[500px]"
+                cardTitle={"Precipitation in mm"}
+              >
+                <RainfallChart weatherData={weatherData} />
               </Card>
             </p>
           </div>
