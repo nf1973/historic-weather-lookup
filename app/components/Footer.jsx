@@ -21,22 +21,6 @@ const Footer = () => {
               Open-Meteo.com
             </a>
           </p>
-          <p>
-            Photo by{" "}
-            <a
-              href="https://unsplash.com/@isawred?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-              target="_blank"
-            >
-              iSawRed
-            </a>{" "}
-            on{" "}
-            <a
-              href="https://unsplash.com/photos/a-clock-on-a-wall-wtbmN2G0r5U?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-              target="_blank"
-            >
-              Unsplash
-            </a>
-          </p>
         </div>
       </div>
     </footer>
