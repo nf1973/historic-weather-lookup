@@ -1,4 +1,6 @@
 import { decimalToDegreesMinutesSeconds } from "../utils/geo";
+import TemperatureChart from "./charts/TemperatureChart";
+import Card from "./Card";
 
 const Charts = ({ foundLocation, weatherData }) => {
   const [latitude, longitude] = decimalToDegreesMinutesSeconds(
@@ -12,7 +14,9 @@ const Charts = ({ foundLocation, weatherData }) => {
         <div className="mb-6 text-xl font-bold w-full">
           <div>
             <p className="mt-8 text-gray-600 text-base font-base">
-              Charts coming soon...
+              <Card>
+                <TemperatureChart weatherData={weatherData} />
+              </Card>
             </p>
           </div>
         </div>
