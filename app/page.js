@@ -12,6 +12,7 @@ import ViewSelector from "./components/ViewSelector";
 import LocationInfo from "./components/LocationInfo";
 import Charts from "./components/Charts";
 import Statistics from "./components/Statistics";
+import LocationNotFound from "./components/LocationNotFound";
 
 export default function Home() {
   const [month, setMonth] = useState("");
@@ -57,7 +58,9 @@ export default function Home() {
           </>
         )}
 
-        {loading && <Loading />}
+        {loading && foundLocation !== undefined && <Loading />}
+
+        {foundLocation === undefined && <LocationNotFound />}
 
         {weatherData && selectedView === "Table" && (
           <TabularData
