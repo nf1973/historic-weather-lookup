@@ -21,7 +21,7 @@ const TemperatureChart = ({ weatherData }) => {
     .reverse();
 
   return (
-    <ResponsiveContainer height="100%" width="100%">
+    <ResponsiveContainer height="92%" width="100%">
       <LineChart
         width={1000}
         height={200}

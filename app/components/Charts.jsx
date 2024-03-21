@@ -14,7 +14,10 @@ const Charts = ({ foundLocation, weatherData }) => {
         <div className="mb-6 text-xl font-bold w-full">
           <div>
             <p className="mt-8 text-gray-600 text-base font-base">
-              <Card>
+              <Card
+                cardHeightClassName="h-[500px]"
+                cardTitle={`Minimum & Maximum Temperatures`}
+              >
                 <TemperatureChart weatherData={weatherData} />
               </Card>
             </p>
