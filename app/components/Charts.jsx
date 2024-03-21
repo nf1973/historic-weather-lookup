@@ -8,7 +8,7 @@ const Charts = ({ foundLocation, weatherData }) => {
       <div className="container mx-auto flex flex-col justify-between items-center max-w-[1260px] py-3">
         <div className="mb-6 text-xl font-bold w-full">
           <div>
-            <p className="mt-8 text-gray-600 text-base font-base">
+            <div className=" text-gray-600 font-base text-xs">
               <Card
                 cardHeightClassName="h-[500px]"
                 cardTitle={"Minimum & Maximum Temperatures in °C"}
@@ -21,7 +21,7 @@ const Charts = ({ foundLocation, weatherData }) => {
               >
                 <RainfallChart weatherData={weatherData} />
               </Card>
-            </p>
+            </div>
           </div>
         </div>
       </div>
