@@ -1,6 +1,7 @@
 import Card from "./Card";
 import TemperatureChart from "./charts/TemperatureChart";
 import RainfallChart from "./charts/RainfallChart";
+import WeatherPieChart from "./charts/WeatherPieChart";
 
 const Charts = ({ foundLocation, weatherData }) => {
   return (
@@ -18,12 +19,20 @@ const Charts = ({ foundLocation, weatherData }) => {
                     <TemperatureChart weatherData={weatherData} />
                   </Card>
                 </div>
-                <div className="col-span-8">
+                <div className="col-span-7">
                   <Card
                     cardHeightClassName="h-[500px]"
                     cardTitle={"Precipitation in mm"}
                   >
                     <RainfallChart weatherData={weatherData} />
+                  </Card>
+                </div>
+                <div className="col-span-5">
+                  <Card
+                    cardHeightClassName="h-[500px]"
+                    cardTitle={"Type of Weather"}
+                  >
+                    <WeatherPieChart weatherData={weatherData} />
                   </Card>
                 </div>
               </div>
