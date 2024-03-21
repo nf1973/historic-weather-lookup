@@ -9,18 +9,24 @@ const Charts = ({ foundLocation, weatherData }) => {
         <div className="mb-6 text-xl font-bold w-full">
           <div>
             <div className=" text-gray-600 font-base text-xs">
-              <Card
-                cardHeightClassName="h-[500px]"
-                cardTitle={"Minimum & Maximum Temperatures in °C"}
-              >
-                <TemperatureChart weatherData={weatherData} />
-              </Card>
-              <Card
-                cardHeightClassName="h-[500px]"
-                cardTitle={"Precipitation in mm"}
-              >
-                <RainfallChart weatherData={weatherData} />
-              </Card>
+              <div className="grid grid-cols-12">
+                <div className="col-span-12">
+                  <Card
+                    cardHeightClassName="h-[500px]"
+                    cardTitle={"Minimum & Maximum Temperatures in °C"}
+                  >
+                    <TemperatureChart weatherData={weatherData} />
+                  </Card>
+                </div>
+                <div className="col-span-8">
+                  <Card
+                    cardHeightClassName="h-[500px]"
+                    cardTitle={"Precipitation in mm"}
+                  >
+                    <RainfallChart weatherData={weatherData} />
+                  </Card>
+                </div>
+              </div>
             </div>
           </div>
         </div>
