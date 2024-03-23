@@ -11,7 +11,7 @@ const Charts = ({ foundLocation, weatherData }) => {
           <div>
             <div className=" text-gray-600 font-base text-xs">
               <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-6">
+                <div className="col-span-12 lg:col-span-6">
                   <Card
                     cardHeightClassName="h-[500px]"
                     cardTitle={"Temperature Ranges in °C"}
@@ -19,7 +19,7 @@ const Charts = ({ foundLocation, weatherData }) => {
                     <TemperatureChart weatherData={weatherData} />
                   </Card>
                 </div>
-                <div className="col-span-6">
+                <div className="col-span-12 lg:col-span-6">
                   <Card
                     cardHeightClassName="h-[500px]"
                     cardTitle={"Precipitation in mm"}

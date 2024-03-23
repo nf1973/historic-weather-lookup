@@ -24,7 +24,7 @@ const Statistics = ({ foundLocation, weatherData }) => {
         <div className="grid grid-cols-6 gap-4 font-base text-gray-400 text-3xl ">
           {/* Cards */}
 
-          <div className="col-span-4">
+          <div className="col-span-6 md:col-span-3 lg:col-span-4">
             <Card>
               <p className="flex items-center h-full">
                 <span className="inline">
@@ -44,7 +44,7 @@ const Statistics = ({ foundLocation, weatherData }) => {
             </Card>
           </div>
 
-          <div className="col-span-2">
+          <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <Card>
               <p className="flex items-center h-full">
                 <span className="inline">
@@ -66,7 +66,7 @@ const Statistics = ({ foundLocation, weatherData }) => {
             </Card>
           </div>
 
-          <div className="col-span-2">
+          <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <Card>
               <p className="flex items-center h-full">
                 <span className="inline">
@@ -86,7 +86,7 @@ const Statistics = ({ foundLocation, weatherData }) => {
             </Card>
           </div>
 
-          <div className="col-span-4">
+          <div className="col-span-6 md:col-span-3 lg:col-span-4">
             <Card>
               <p className="flex items-center h-full">
                 <span className="inline">
@@ -108,7 +108,7 @@ const Statistics = ({ foundLocation, weatherData }) => {
             </Card>
           </div>
 
-          <div className="col-span-2">
+          <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <Card>
               <p className="flex items-center h-full">
                 <span className="inline">
@@ -139,7 +139,7 @@ const Statistics = ({ foundLocation, weatherData }) => {
             </Card>
           </div>
 
-          <div className="col-span-2">
+          <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <Card>
               <p className="flex items-center h-full">
                 <span className="inline">
@@ -158,7 +158,7 @@ const Statistics = ({ foundLocation, weatherData }) => {
             </Card>
           </div>
 
-          <div className="col-span-2">
+          <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <Card>
               <p className="flex items-center h-full">
                 <span className="inline">
@@ -179,7 +179,7 @@ const Statistics = ({ foundLocation, weatherData }) => {
           </div>
 
           {snowDays.length > 0 && (
-            <div className="col-span-4">
+            <div className="col-span-6 md:col-span-3 lg:col-span-4">
               <Card>
                 <p className="flex items-center h-full">
                   <span className="inline">
