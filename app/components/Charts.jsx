@@ -1,7 +1,7 @@
 import Card from "./Card";
 import TemperatureChart from "./charts/TemperatureChart";
 import RainfallChart from "./charts/RainfallChart";
-import WeatherPieChart from "./charts/WeatherPieChart";
+import WeatherTreemap from "./charts/WeatherTreemap";
 
 const Charts = ({ foundLocation, weatherData }) => {
   return (
@@ -11,15 +11,15 @@ const Charts = ({ foundLocation, weatherData }) => {
           <div>
             <div className=" text-gray-600 font-base text-xs">
               <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-12">
+                <div className="col-span-6">
                   <Card
                     cardHeightClassName="h-[500px]"
-                    cardTitle={"Minimum & Maximum Temperatures in °C"}
+                    cardTitle={"Temperature Ranges in °C"}
                   >
                     <TemperatureChart weatherData={weatherData} />
                   </Card>
                 </div>
-                <div className="col-span-7">
+                <div className="col-span-6">
                   <Card
                     cardHeightClassName="h-[500px]"
                     cardTitle={"Precipitation in mm"}
@@ -27,12 +27,12 @@ const Charts = ({ foundLocation, weatherData }) => {
                     <RainfallChart weatherData={weatherData} />
                   </Card>
                 </div>
-                <div className="col-span-5">
+                <div className="col-span-12">
                   <Card
                     cardHeightClassName="h-[500px]"
                     cardTitle={"Type of Weather"}
                   >
-                    <WeatherPieChart weatherData={weatherData} />
+                    <WeatherTreemap weatherData={weatherData} />
                   </Card>
                 </div>
               </div>

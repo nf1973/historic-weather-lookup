@@ -1,28 +1,27 @@
 import {
   ResponsiveContainer,
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
 } from "recharts";
-import Card from "../Card";
 
 const TemperatureChart = ({ weatherData }) => {
-  // Extract dates and maximum temperatures from the provided data
-  const temperatureData = weatherData
-    .map((entry) => ({
-      date: String(entry.daily.time[0]).slice(0, 4), // Assuming each entry has only one date
-      temperature_max: entry.daily.temperature_2m_max[0], // Max temperature for the day
-      temperature_min: entry.daily.temperature_2m_min[0], // Min temperature for the day
-    }))
-    .reverse();
+  const formattedData = weatherData.map((entry) => ({
+    date: String(entry.daily.time[0]).slice(0, 4),
+    temperature: [
+      entry.daily.temperature_2m_max[0],
+      entry.daily.temperature_2m_min[0],
+    ],
+  }));
+
+  const temperatureData = formattedData.reverse();
 
   return (
     <ResponsiveContainer height="92%" width="100%">
-      <LineChart
+      <BarChart
         width={1000}
         height={200}
         data={temperatureData}
@@ -32,20 +31,8 @@ const TemperatureChart = ({ weatherData }) => {
         <XAxis dataKey="date" />
         <YAxis label={{ value: "°C", angle: -90, position: "insideLeft" }} />
         <Tooltip />
-        <Legend align="center" verticalAlign="bottom" />
-        <Line
-          type="monotone"
-          dataKey="temperature_max"
-          stroke="#f00"
-          name="Max Temperature"
-        />
-        <Line
-          type="monotone"
-          dataKey="temperature_min"
-          stroke="#00f"
-          name="Min Temperature"
-        />
-      </LineChart>
+        <Bar dataKey="temperature" fill="#05213c" name="Temperature Range" />
+      </BarChart>
     </ResponsiveContainer>
   );
 };

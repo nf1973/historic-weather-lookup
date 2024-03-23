@@ -10,11 +10,10 @@ import {
 } from "recharts";
 
 const RainfallChart = ({ weatherData }) => {
-  // Extracting date and precipitation sum from weatherData
   const rainfallData = weatherData
     .map((entry) => ({
-      date: String(entry.daily.time[0]).slice(0, 4), // Assuming each entry has only one date
-      precipitation_sum: entry.daily.precipitation_sum[0], // Precipitation sum for the day
+      date: String(entry.daily.time[0]).slice(0, 4),
+      precipitation_sum: entry.daily.precipitation_sum[0],
     }))
     .reverse();
 
